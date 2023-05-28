@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define ul uint32_t       // positive integer
+#define ul uint8_t       // positive integer
 
 #define BitsInWord 8
 #define mod 256 // pow(2, BitsInWord)
@@ -400,7 +400,7 @@ void BW2HalfOddRF(ul* x)
 void ENCRYPTION(ul* x, ul* k, bool flag, int rounds) // flag = true means half round in encryption
 {
   ul x0[16]{ 0 };
-  InsertKey(x, k);
+  //InsertKey(x, k);
   CopyState(x0, x, 16);
   if (flag) {
     for (int i{ 1 };i <= rounds;++i) {
@@ -419,7 +419,7 @@ void ENCRYPTION(ul* x, ul* k, bool flag, int rounds) // flag = true means half r
       FWRound(x, i);
     }
   }
-  AddStates(x, x0);
+  //AddStates(x, x0);
 }
 
 
